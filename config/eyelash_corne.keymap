@@ -115,20 +115,24 @@
 &td_esc    &kp Q  &kp W  &kp E      &kp R     &kp T          &kp Y        &kp U     &kp I      &kp O       &kp P      &kp BSPC
 &kp TAB    &kp A  &kp S  &kp D      &kp F     &kp G          &kp H        &kp J     &kp K      &kp L       &td_semi   &td_quot
 &sk LSHFT  &kp Z  &kp X  &kp C      &kp V     &kp B          &kp N        &kp M     &td_comma  &td_period  &td_slash  &sk LSHFT
-                         &sk LCTRL  &sk LGUI  &lt 4 ENTER    &lt 2 SPACE  &sk LALT  &kp K_APP
+                         &sk LCTRL  &sk LGUI  &lt 3 ENTER    &lt 2 SPACE  &sk LALT  &kp K_APP
             >;
+
+            label = "QWERTY";
         };
 
-        layer_1 {
+        L1_TRI {
             bindings = <
-&kp TILDE   &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS    &kp STAR      &td_lpar    &td_rpar    &trans
-&caps_word  &trans    &trans  &trans    &trans    &trans       &trans     &trans      &trans        &trans      &trans      &trans
-&trans      &trans    &trans  &trans    &trans    &trans       &trans     &trans      &trans        &trans      &trans      &trans
-                              &trans    &trans    &trans       &trans     &trans      &trans
+&kp TILDE   &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp STAR  &td_lpar  &td_rpar  &trans
+&caps_word  &trans    &trans  &trans    &trans    &trans       &trans     &trans    &trans    &trans    &trans    &trans
+&trans      &trans    &trans  &trans    &trans    &trans       &trans     &trans    &trans    &trans    &trans    &trans
+                              &trans    &trans    &trans       &trans     &trans    &trans
             >;
+
+            label = "3-SYMB";
         };
 
-        layer_2 {
+        L2R_NUM {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -138,12 +142,14 @@
             bindings = <
 &kp GRAVE   &kp N1  &kp N2  &kp N3  &kp N4    &kp N5           &kp N6     &kp N7  &kp N8  &kp N9  &kp N0     &kp DEL
 &caps_word  &trans  &trans  &trans  &kp PIPE  &kp BACKSLASH    &kp PLUS   &kp N4  &kp N5  &kp N6  &kp EQUAL  &kp INS
-&trans      &mo 6   &trans  &trans  &trans    &kp UNDER        &kp MINUS  &kp N1  &kp N2  &kp N3  &trans     &trans
+&trans      &mo 5   &trans  &trans  &trans    &kp UNDER        &kp MINUS  &kp N1  &kp N2  &kp N3  &trans     &trans
                             &trans  &trans    &trans           &trans     &trans  &sl 4
             >;
+
+            label = "R-NUM";
         };
 
-        layer_3 {
+        L3L_MOVE {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -156,33 +162,41 @@
 &trans  &trans  &trans          &trans          &trans           &trans    &trans    &trans          &trans    &trans     &trans         &trans
                                 &trans          &trans           &trans    &trans    &trans          &trans
             >;
+
+            label = "L-MOVE";
         };
 
-        layer_4 {
+        L4_FUNC {
             bindings = <
 &none       &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &none
 &none       &none         &none         &none         &none         &none           &none   &kp F4  &kp F5  &kp F6  &none    &none
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none   &kp F1  &kp F2  &kp F3  &none    &none
-                                        &trans        &trans        &trans          &trans  &trans  &sl 5
+                                        &trans        &trans        &trans          &trans  &trans  &sl 6
             >;
+
+            label = "F1-10";
         };
 
-        layer_5 {
-            bindings = <
-&none  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &kp F16  &kp F17  &kp F18  &kp F19  &kp F20  &none
-&none  &kp F21  &kp F22  &kp F23  &kp F24  &none      &kp F21  &kp F22  &kp F23  &kp F24  &none    &none
-&none  &none    &none    &none    &none    &none      &none    &none    &none    &none    &none    &none
-                         &trans   &trans   &trans     &trans   &trans   &trans
-            >;
-        };
-
-        layer_6 {
+        L5_KP {
             bindings = <
 &none      &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N4     &kp KP_N5      &kp KP_N6     &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0     &kp BSPC
 &none      &none      &none      &none      &kp KP_LPAR   &kp KP_RPAR    &kp KP_PLUS   &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_EQUAL  &none
 &kp LSHFT  &none      &none      &none      &kp KP_COMMA  &kp KP_DOT     &kp KP_MINUS  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_SLASH  &kp RSHFT
                                  &trans     &trans        &trans         &trans        &trans     &trans
             >;
+
+            label = "KEYPAD";
+        };
+
+        L6_FUNC2 {
+            bindings = <
+&none  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &kp F16  &kp F17  &kp F18  &kp F19  &kp F20  &none
+&none  &none    &none    &none    &none    &none      &kp F21  &kp F22  &kp F23  &kp F24  &none    &none
+&none  &none    &none    &none    &none    &none      &none    &none    &none    &none    &none    &none
+                         &trans   &trans   &trans     &trans   &trans   &trans
+            >;
+
+            label = "F11-24";
         };
     };
 
@@ -195,3 +209,4 @@
         };
     };
 };
+
