@@ -134,11 +134,13 @@
         compatible = "zmk,keymap";
 
         base_layer { // 0
+            // |  `   |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL  |  // 2 RAISE
+            // |      |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |      |  // 1 TRI
             // --------------------------------------   ---------------------------------------
-            // | ESC  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-            // | TAB  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+            // | ESC  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | BSPC |  // 0 BASE
+            // | TAB  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '   |
+            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | ESC  |
+            //                    | GUI | LWR | SPC |   | ENT | RSE | ALT |
 
             bindings = <
 &td_esc_reset  &kp Q    &kp W   &kp E      &kp R     &kp T        &kp Y       &kp U     &kp I      &kp O       &kp P      &kp BSPC
@@ -174,10 +176,10 @@
 
         move_layer { // 3 (LOWER)
             bindings = <
-&kp TILDE &none   &none           &msc SCRL_UP    &none            &none     &kp HOME  &none           &kp UP    &none      &kp PAGE_UP    &none 
-&none     &none   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none     &kp END   &kp LEFT_ARROW  &kp DOWN  &kp RIGHT  &kp PAGE_DOWN  &none 
-&none     &none   &none           &none           &none            &none     &none     &none           &none     &none      &none          &none 
-                                  &trans          &trans           &trans    &trans    &trans          &trans
+&kp TILDE   &none   &none           &msc SCRL_UP    &none            &none     &kp HOME  &none     &kp UP    &none      &kp PG_UP    &none 
+&none       &none   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none     &kp END   &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DOWN  &none 
+&none       &none   &none           &none           &none            &none     &none     &none     &none     &none      &none        &none 
+                                    &trans          &trans           &trans    &trans    &trans    &trans
             >;
         };
 
