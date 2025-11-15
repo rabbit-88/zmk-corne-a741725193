@@ -213,7 +213,7 @@
         mouse_layer { // 4 (MOUSE)
            bindings = <
 //         |            |            |            |            |            |            |            |            |            |            |
-&none      &none        &none        &tran        &none        &none        &kp HOME     &mkp LCLK    &mmv MOUSE_U &mkp RCLK    &none        &none 
+&none      &none        &none        &trans       &none        &none        &kp HOME     &mkp LCLK    &mmv MOUSE_U &mkp RCLK    &none        &none 
 &none      &none        &trans       &trans       &trans       &none        &kp END      &mmv MOUSE_L &mmv MOUSE_D &mmv MOUSE_R &none        &none 
 &none      &none        &none        &none        &none        &none        &none        &none        &none        &none        &none        &none 
                                      &trans       &trans       &trans       &trans       &trans       &trans
