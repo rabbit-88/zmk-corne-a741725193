@@ -10,22 +10,16 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#define SCRLU MOVE_Y(ZMK_POINTING_DEFAULT_SCRL_VAL)
-#define SCRLD MOVE_Y(-ZMK_POINTING_DEFAULT_SCRL_VAL)
-#define SCRLL MOVE_X(-ZMK_POINTING_DEFAULT_SCRL_VAL)
-#define SCRLR MOVE_X(ZMK_POINTING_DEFAULT_SCRL_VAL)
 
-#define S_U MOVE_Y( ZMK_POINTING_DEFAULT_SCRL_VAL)
-#define S_D MOVE_Y(-ZMK_POINTING_DEFAULT_SCRL_VAL)
-#define S_L MOVE_X(-ZMK_POINTING_DEFAULT_SCRL_VAL)
-#define S_R MOVE_X( ZMK_POINTING_DEFAULT_SCRL_VAL)
+#define SCRL_U MOVE_Y(ZMK_POINTING_DEFAULT_SCRL_VAL)
+#define SCRL_D MOVE_Y(-ZMK_POINTING_DEFAULT_SCRL_VAL)
+#define SCRL_L MOVE_X(-ZMK_POINTING_DEFAULT_SCRL_VAL)
+#define SCRL_R MOVE_X(ZMK_POINTING_DEFAULT_SCRL_VAL)
 
-#define M_U MOVE_UP 
-#define M_D MOVE_DOWN
-#define M_L MOVE_LEFT
-#define M_R MOVE_RIGHT
-
-#if BT_SEL != 3 #error BT_SEL_CMD is not 3
+#define MOUSE_U MOVE_UP 
+#define MOUSE_D MOVE_DOWN
+#define MOUSE_L MOVE_LEFT
+#define MOUSE_R MOVE_RIGHT
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
@@ -209,8 +203,8 @@
         move_layer { // 3 (LOWER)
            bindings = <
 //         |            |            |            |            |            |            |            |            |            |            |
-&kp TILDE  &none        &mkp LCLK    &msc S_U     &mkp RCLK    &none        &kp HOME     &none        &kp UP       &none        &kp PG_UP    &none 
-&none      &none        &msc S_L     &msc S_D     &msc S_R     &none        &kp END      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PG_DN    &none 
+&kp TILDE  &none        &mkp LCLK    &msc SCRL_U  &mkp RCLK    &none        &kp HOME     &none        &kp UP       &none        &kp PG_UP    &none 
+&none      &none        &msc SCRL_L  &msc SCRL_D  &msc SCRL_R  &none        &kp END      &kp LEFT     &kp DOWN     &kp RIGHT    &kp PG_DN    &none 
 &mo 4      &none        &none        &none        &none        &none        &none        &none        &none        &none        &none        &none 
                                      &trans       &trans       &trans       &trans       &trans       &trans
            >; 
@@ -219,8 +213,8 @@
         mouse_layer { // 4 (MOUSE)
            bindings = <
 //         |            |            |            |            |            |            |            |            |            |            |
-&none      &none        &none        &tran        &none        &none        &kp HOME     &mkp LCLK    &mmv M_U     &mkp RCLK    &none        &none 
-&none      &none        &trans       &trans       &trans       &none        &kp END      &mmv M_L     &mmv M_D     &mmv M_R     &none        &none 
+&none      &none        &none        &tran        &none        &none        &kp HOME     &mkp LCLK    &mmv MOUSE_U &mkp RCLK    &none        &none 
+&none      &none        &trans       &trans       &trans       &none        &kp END      &mmv MOUSE_L &mmv MOUSE_D &mmv MOUSE_R &none        &none 
 &none      &none        &none        &none        &none        &none        &none        &none        &none        &none        &none        &none 
                                      &trans       &trans       &trans       &trans       &trans       &trans
            >;
